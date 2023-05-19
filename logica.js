@@ -33,7 +33,8 @@ class MyMatrix {
   }
 
   compute() {
-    const computeSum = arr => { // usamos reduce para hacer el calculo
+    const computeSum = arr => {
+      // usamos reduce para hacer el calculo
       if (Array.isArray(arr)) {
         return arr.reduce((sum, subArr) => sum + computeSum(subArr), 0)
       } else {
