@@ -88,45 +88,47 @@ const f = [
   ],
 ]
 
-// const m1 = new MyMatrix(a)
-// console.log(m1.dimension()) // Salida: 2
-// console.log(m1.straight()) // Salida: true
-// console.log(m1.compute()) // Salida: 21
+const ejemplo1 = new MyMatrix(a)
+console.log('La dimension es: ', ejemplo1.dimension())
+console.log('is straight?: ', ejemplo1.straight())
+console.log('Calculo: ', ejemplo1.compute())
 
-
-// const m2 = new MyMatrix(b)
-// console.log(m2.dimension()) // Salida: 2
-// console.log(m2.straight()) // Salida: false
-// console.log(m2.compute()) // Salida: 15
-
+const ejemplo2 = new MyMatrix(e)
+console.log('La dimension es: ', ejemplo2.dimension())
+console.log('is straight?: ', ejemplo2.straight())
+console.log('Calculo: ', ejemplo2.compute())
 
 class MyArray {
   constructor(string) {
-    this.string = string;
+    this.string = string
   }
 
   operation() {
-    const regex = /^[+\-*/\(\)\s]+$/; // Expresión regular para validar la operación
+    const regex = /^[+\-*/\(\)\s]+$/ // Expresión regular para validar la operación
 
     // Comprobar si el texto corresponde a una operación aritmética
-    return regex.test(this.string);
+    return regex.test(this.string)
   }
 
   compute() {
     if (!this.operation()) {
-      return false; // La operación no es válida
+      return false // La operación no es válida
     }
 
     try {
-      const result = eval(this.string); // Evaluar la expresión matemática
-      return result;
+      const result = eval(this.string) // Evaluar la expresión matemática
+      return result
     } catch (error) {
-      return false; // Error al evaluar la expresión
+      return false
     }
   }
 }
 
-// Ejemplo
-const s = new MyArray("2 + 3 * (4 - 1)");
-console.log(s.operation()); // true
-console.log(s.compute()); // 11
+const a2 = 'Hello world'
+const b2 = '2 + 10 / 2 - 20'
+const c2 = '(2 + 10) / 2 - 20'
+const d2 = '(2 + 10 / 2 - 20'
+
+const ejemplo3 = new MyArray(d2)
+console.log('Es una operacion?: ', ejemplo3.operation()) // false
+console.log('Calculo: ', ejemplo3.compute()) // false
