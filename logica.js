@@ -33,7 +33,7 @@ class MyMatrix {
   }
 
   compute() {
-    const computeSum = arr => {
+    const computeSum = arr => { // usamos reduce para hacer el calculo
       if (Array.isArray(arr)) {
         return arr.reduce((sum, subArr) => sum + computeSum(subArr), 0)
       } else {
@@ -106,17 +106,17 @@ class MyArray {
   operation() {
     const regex = /^[+\-*/\(\)\s]+$/ // Expresión regular para validar la operación
 
-    // Comprobar si el texto corresponde a una operación aritmética
+    // Comprobar si el texto corresponde a una operacion
     return regex.test(this.string)
   }
 
   compute() {
     if (!this.operation()) {
-      return false // La operación no es válida
+      return false // La operación no es valida
     }
 
     try {
-      const result = eval(this.string) // Evaluar la expresión matemática
+      const result = eval(this.string) // Evaluar la exprecion
       return result
     } catch (error) {
       return false
